@@ -41,3 +41,11 @@ def plot_several_pics_with_one_colorbar(pics):
 
     fig.colorbar(im, ax=axs.ravel().tolist())
     return fig
+
+def plot_hist(values, nbins=15):
+    plt.clf()
+    fig, ax = plt.subplots()
+    values = np.array(values).flatten()
+    (probs, bins, _) = plt.hist(values, bins=nbins,
+                                weights=np.ones_like(values) / len(values), range=(0, values.max()))
+    return fig
