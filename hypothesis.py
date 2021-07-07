@@ -44,14 +44,14 @@ def find_best_hypothesys(dict_hypotheses): #ищем ту что с самым �
     return val, dxdy[0], dxdy[1]
 
 def get_field_of_hypo_on_pic(hypo, pic):
-        ymax = pic.shape[0]
-        xmax = pic.shape[1]
+    ymax = pic.shape[0]
+    xmax = pic.shape[1]
 
-        res = np.zeros((ymax, xmax))
-        for centery in range(0, ymax):
-            for centerx in range(0, xmax):
-                val = hypo.apply_to_point(pic, centerx, centery)
-                res[centery, centerx] = val
-        return res
+    res = np.zeros((ymax, xmax))
+    for centery in range(0, ymax):
+        for centerx in range(0, xmax):
+            deviation_from_etalon, ddx, ddy = hypo.apply_to_point(pic, centerx, centery)
+            res[centery, centerx] = deviation_from_etalon
+    return res
 
 

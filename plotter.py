@@ -33,7 +33,7 @@ def plot_several_lines_pics_with_one_colorbar(pics_series):
 
 def plot_several_pics_with_one_colorbar(pics):
     num_pics_in_seria = len(pics)
-    fig, axs = plt.subplots(num_pics_in_seria)
+    fig, axs = plt.subplots( ncols=num_pics_in_seria)
     MIN, MAX = np.array(pics).min(), np.array(pics).max()
 
     for i in range(num_pics_in_seria):
