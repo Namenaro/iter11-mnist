@@ -16,3 +16,5 @@ def create_hypos_same_radiuses(pic, sensor_field_radius, u_radius):
         hypo = Hypothesis(sensor_field_radius, etalon_mean,dx,dy,u_radius)
         hypos.append(hypo)
     return hypos
+
+
